@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>48</title>
+        <style type="text/css">
+            .pg-bg{background: #98cb00;}
+            .center-img{ width: 20%; margin: 45% auto !important; border: 1px transparent solid; text-align: center; }
+        </style>
+
+    </head>
+
+    <body class="pg-bgs">
+        <iframe style="display:none" id="result" src="http://dev.testversions.com/oxfam/survey/surveys/survey/5#/" frameborder="0"></iframe>
+        <div class="center-img">
+            <img src="images/362.gif"/>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            $(document).bind("deviceready", function () {
+                $("body").addClass("pg-bg");
+                var w_width = $(window).width();
+                var w_height = $(window).height();
+
+                $("#result").width(w_width).height(w_height);
+
+                $('#result').on('load', function () {
+                    $(this).show();
+                    $("body").removeClass("pg-bg");
+                    $(".center-img").hide();
+                });
+
+//                var ref = window.open('http://apache.org', '_blank', 'location=yes');
+//                ref.addEventListener('loadstart', function () {
+//                    alert('start: ' + event.url);
+//                });
+//                ref.addEventListener('loadstop', function () {
+//                    alert('stop: ' + event.url);
+//                });
+//                ref.addEventListener('exit', function () {
+//                    alert(event.type);
+//                });
+            });
+        </script>
+
+    </body>
+</html>
